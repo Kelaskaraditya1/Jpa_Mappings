@@ -1,5 +1,6 @@
 package com.StarkIndustries.SpringDataJpaMappings.oneToOne.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -22,20 +23,28 @@ public class Laptop {
     private String model;
 
     @Column(name = "price")
-    private Long price;
+    private String price;
 
     @OneToOne(mappedBy = "laptop")
-    @JoinColumn(name = "sid")
+    @JsonBackReference
     private Student student;
 
-    public Laptop(Long laptopId, String company, String model, Long price) {
+    public Laptop(Long laptopId, String company, String model, String price, Student student) {
+        this.laptopId = laptopId;
+        this.company = company;
+        this.model = model;
+        this.price = price;
+        this.student = student;
+    }
+
+    public Laptop(Long laptopId, String company, String model, String price) {
         this.laptopId = laptopId;
         this.company = company;
         this.model = model;
         this.price = price;
     }
 
-    public Laptop(String company, String model, Long price) {
+    public Laptop(String company, String model, String price) {
         this.company = company;
         this.model = model;
         this.price = price;
@@ -69,12 +78,20 @@ public class Laptop {
         this.model = model;
     }
 
-    public Long getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(Long price) {
+    public void setPrice(String price) {
         this.price = price;
+    }
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
     }
 
     @Override

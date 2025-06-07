@@ -1,5 +1,6 @@
 package com.StarkIndustries.SpringDataJpaMappings.oneToOne.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -26,6 +27,7 @@ public class Student {
 
     @OneToOne
     @JoinColumn(name = "laptop_id")
+    @JsonManagedReference
     private Laptop laptop;
 
     public Student(Long sid, String name, String department, String email, Laptop laptop) {
@@ -43,12 +45,6 @@ public class Student {
         this.email = email;
     }
 
-    public Student(String name, String department, String email, Laptop laptop) {
-        this.name = name;
-        this.department = department;
-        this.email = email;
-        this.laptop = laptop;
-    }
 
     public Student(String name, String department, String email) {
         this.name = name;
@@ -106,7 +102,6 @@ public class Student {
                 ", name='" + name + '\'' +
                 ", department='" + department + '\'' +
                 ", email='" + email + '\'' +
-                ", laptop=" + laptop +
                 '}';
     }
 }
