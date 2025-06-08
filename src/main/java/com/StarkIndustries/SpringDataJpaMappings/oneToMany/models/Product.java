@@ -9,7 +9,7 @@ public class Product {
     /*
      * add one to many to the Parent Class and @JsonManagedReference also to the parent class to avoid from infinite recursion
      * use cascade=CascadeType.All property so that operation on Parent entity will effect on child entity as well like if parent is deleted than the related child entity will also be deleted.
-     * */
+     * * give @JsonManagereference to parent class in which we want the array of objects child class and give @JsonBackreference to child class so that it will not add it's parent in the response body.*/
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
