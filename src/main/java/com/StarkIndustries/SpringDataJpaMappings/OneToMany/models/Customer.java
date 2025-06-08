@@ -1,5 +1,7 @@
 package com.StarkIndustries.SpringDataJpaMappings.OneToMany.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -21,6 +23,7 @@ public class Customer {
     private String username;
 
     @OneToMany(mappedBy = "customer")
+    @JsonManagedReference
     private List<Product> productList;
 
     public Customer(Long customerId, String name, String email, String username, List<Product> productList) {

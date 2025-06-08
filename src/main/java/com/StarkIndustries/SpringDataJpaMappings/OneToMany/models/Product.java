@@ -1,5 +1,7 @@
 package com.StarkIndustries.SpringDataJpaMappings.OneToMany.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 @Entity(name = "product")
@@ -22,6 +24,8 @@ public class Product {
     private String amount;
 
     @ManyToOne
+    @JoinColumn(name = "customer_id")
+    @JsonBackReference
     private Customer customer;
 
     public Product(Long productId, String name, String quantity, String rate, String amount, Customer customer) {
