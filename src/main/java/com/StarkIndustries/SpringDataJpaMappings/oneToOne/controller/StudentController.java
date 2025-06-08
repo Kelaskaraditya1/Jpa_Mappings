@@ -39,4 +39,11 @@ public class StudentController {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No Student entry!!");
 
     }
+
+    @DeleteMapping("/delete-student/{id}")
+    public ResponseEntity<?> deleteStudent(@PathVariable("id") Long studentId){
+        if(this.studentService.deleteStudent(studentId))
+            return ResponseEntity.status(HttpStatus.OK).body("Student deleted successfully!!");
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Student doesn't exist!!");
+    }
 }

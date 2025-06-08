@@ -1,11 +1,15 @@
-package com.StarkIndustries.SpringDataJpaMappings.OneToMany.models;
+package com.StarkIndustries.SpringDataJpaMappings.oneToMany.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 @Entity(name = "product")
 public class Product {
+
+    /*
+     * add one to many to the Parent Class and @JsonManagedReference also to the parent class to avoid from infinite recursion
+     * use cascade=CascadeType.All property so that operation on Parent entity will effect on child entity as well like if parent is deleted than the related child entity will also be deleted.
+     * */
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

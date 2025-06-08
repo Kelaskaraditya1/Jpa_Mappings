@@ -1,6 +1,6 @@
-package com.StarkIndustries.SpringDataJpaMappings.OneToMany.repository;
+package com.StarkIndustries.SpringDataJpaMappings.oneToMany.repository;
 
-import com.StarkIndustries.SpringDataJpaMappings.OneToMany.models.Product;
+import com.StarkIndustries.SpringDataJpaMappings.oneToMany.models.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

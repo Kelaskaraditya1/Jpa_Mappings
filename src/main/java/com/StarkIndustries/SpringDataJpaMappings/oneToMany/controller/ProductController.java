@@ -1,8 +1,8 @@
-package com.StarkIndustries.SpringDataJpaMappings.OneToMany.controller;
+package com.StarkIndustries.SpringDataJpaMappings.oneToMany.controller;
 
-import com.StarkIndustries.SpringDataJpaMappings.OneToMany.dto.ProductDto;
-import com.StarkIndustries.SpringDataJpaMappings.OneToMany.models.Product;
-import com.StarkIndustries.SpringDataJpaMappings.OneToMany.service.ProductService;
+import com.StarkIndustries.SpringDataJpaMappings.oneToMany.dto.ProductDto;
+import com.StarkIndustries.SpringDataJpaMappings.oneToMany.models.Product;
+import com.StarkIndustries.SpringDataJpaMappings.oneToMany.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

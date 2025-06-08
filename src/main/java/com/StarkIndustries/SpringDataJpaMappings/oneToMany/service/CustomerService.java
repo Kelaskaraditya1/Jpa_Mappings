@@ -1,7 +1,7 @@
-package com.StarkIndustries.SpringDataJpaMappings.OneToMany.service;
+package com.StarkIndustries.SpringDataJpaMappings.oneToMany.service;
 
-import com.StarkIndustries.SpringDataJpaMappings.OneToMany.models.Customer;
-import com.StarkIndustries.SpringDataJpaMappings.OneToMany.repository.CustomerRepository;
+import com.StarkIndustries.SpringDataJpaMappings.oneToMany.models.Customer;
+import com.StarkIndustries.SpringDataJpaMappings.oneToMany.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +25,14 @@ public class CustomerService {
 
     public List<Customer> getCustomers(){
         return this.customerRepository.findAll();
+    }
+
+    public boolean deleteCustomer(Long customerId){
+        if(this.customerRepository.existsById(customerId)){
+            this.customerRepository.deleteById(customerId);
+            return true;
+        }
+        return false;
     }
 
 }

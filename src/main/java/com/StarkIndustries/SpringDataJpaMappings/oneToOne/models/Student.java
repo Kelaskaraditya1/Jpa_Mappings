@@ -25,7 +25,7 @@ public class Student {
     @Column(name = "email")
     private String email;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "laptop_id")
     @JsonManagedReference
     private Laptop laptop;

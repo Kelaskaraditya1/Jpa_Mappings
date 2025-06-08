@@ -1,11 +1,10 @@
-package com.StarkIndustries.SpringDataJpaMappings.OneToMany.service;
+package com.StarkIndustries.SpringDataJpaMappings.oneToMany.service;
 
-import com.StarkIndustries.SpringDataJpaMappings.OneToMany.dto.ProductDto;
-import com.StarkIndustries.SpringDataJpaMappings.OneToMany.models.Customer;
-import com.StarkIndustries.SpringDataJpaMappings.OneToMany.models.Product;
-import com.StarkIndustries.SpringDataJpaMappings.OneToMany.repository.CustomerRepository;
-import com.StarkIndustries.SpringDataJpaMappings.OneToMany.repository.ProductRepository;
-import org.apache.catalina.LifecycleState;
+import com.StarkIndustries.SpringDataJpaMappings.oneToMany.dto.ProductDto;
+import com.StarkIndustries.SpringDataJpaMappings.oneToMany.models.Customer;
+import com.StarkIndustries.SpringDataJpaMappings.oneToMany.models.Product;
+import com.StarkIndustries.SpringDataJpaMappings.oneToMany.repository.CustomerRepository;
+import com.StarkIndustries.SpringDataJpaMappings.oneToMany.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

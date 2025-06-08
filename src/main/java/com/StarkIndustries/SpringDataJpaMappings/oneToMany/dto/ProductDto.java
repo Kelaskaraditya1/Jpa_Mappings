@@ -1,4 +1,4 @@
-package com.StarkIndustries.SpringDataJpaMappings.OneToMany.dto;
+package com.StarkIndustries.SpringDataJpaMappings.oneToMany.dto;
 
 public class ProductDto {
 

@@ -43,4 +43,13 @@ public class StudentService {
     public List<Student> getStudents(){
         return this.studentRepository.findAll();
     }
+
+    public boolean deleteStudent(Long studentId){
+        if(this.studentRepository.existsById(studentId)){
+            this.studentRepository.deleteById(studentId);
+            return true;
+        }
+        return false;
+    }
+
 }

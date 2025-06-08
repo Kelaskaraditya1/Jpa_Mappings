@@ -1,7 +1,7 @@
-package com.StarkIndustries.SpringDataJpaMappings.OneToMany.controller;
+package com.StarkIndustries.SpringDataJpaMappings.oneToMany.controller;
 
-import com.StarkIndustries.SpringDataJpaMappings.OneToMany.models.Customer;
-import com.StarkIndustries.SpringDataJpaMappings.OneToMany.service.CustomerService;
+import com.StarkIndustries.SpringDataJpaMappings.oneToMany.models.Customer;
+import com.StarkIndustries.SpringDataJpaMappings.oneToMany.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -37,6 +37,13 @@ public class CustomerController {
         if(!customerList.isEmpty())
             return ResponseEntity.status(HttpStatus.OK).body(customerList);
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Enter customer's first!!");
+    }
+
+    @DeleteMapping("/delete-customer/{id}")
+    public ResponseEntity<?> deleteCustomer(@PathVariable("id") Long customerId){
+        if(this.customerService.deleteCustomer(customerId))
+            return ResponseEntity.status(HttpStatus.OK).body("Customer deleted Successfully!!");
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Customer doesn't exist!!");
     }
 
 }
